@@ -21,7 +21,9 @@ ENROLMENT:
  - KEY ( EVENTS TAG)
  - ENROLLED
 
-EXAMPLE
+EXAMPLE of enrolment
 EVENT-HAI  ENROLLED
-(12)       total(2) (55)(60)
+(12)       (55)(60)
+
+
 
