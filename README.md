@@ -2,7 +2,7 @@
 hallintajärjestelmä
 
 
-phpmyadmin
+react + phpmyadmin
 
 DB STRUCTURE
 EVENTS: 
