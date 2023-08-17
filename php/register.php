@@ -20,6 +20,17 @@ $user_id = NULL;
 $email = mysqli_real_escape_string($conn, $data['email']);
 $password = password_hash($data['password'], PASSWORD_DEFAULT); // Hash the password
 
+// Check if email and password are empty 
+if ($email === '' || $password === '') {
+    $response = array('error' => 'Email and password cannot be empty');
+    echo json_encode($response);
+    exit();
+    //check if email is missing '@' symbol
+} elseif (strpos($email, '@') === false) {
+    $response = array('error' => 'Email must include "@" symbol');
+    echo json_encode($response);
+    exit();
+}
 // Insert user into the database
 $query = "INSERT INTO users (user_id, email, password) VALUES ('$user_id', '$email', '$password')";
 
