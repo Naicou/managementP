@@ -6,19 +6,21 @@ phpmyadmin
 
 DB STRUCTURE
 EVENTS: 
+ -event_id (1, 2, 3...) AUTO
  -event name
  -description
  -date
  -time
- -tag (1, 2, 3...) AUTO
+ 
 
 USERS:
+ -user_id (1, 2, 3...) AUTO
  -email
  -password
- -tag (1, 2, 3...) AUTO
+ 
 
 ENROLMENT:
- - KEY ( EVENTS TAG)
+ - KEY ( EVENTS ID)
  - ENROLLED
 
 EXAMPLE of enrolment
