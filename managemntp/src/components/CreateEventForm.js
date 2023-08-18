@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import api from '../api/api'; // Import your API module
+import api from '../api/api';
+
 
 const CreateEventForm = ({ onEventCreated }) => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ const CreateEventForm = ({ onEventCreated }) => {
   const handleCreateEvent = async (e) => {
     e.preventDefault();
     try {
+      console.log('Before calling createEvent');
       await api.createEvent(formData);
 
       // Update the form data state and then notify the parent component
