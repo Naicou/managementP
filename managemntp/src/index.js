@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import RegistrationForm from './components/RegistrationForm';
 import LoginForm from './components/LoginForm';
+import EventList from './components/EventList';
+import CreateEventForm from './components/CreateEventForm'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +15,8 @@ root.render(
     
     <RegistrationForm />
     <LoginForm />
+    <EventList />
+    
   </React.StrictMode>
 );
 
