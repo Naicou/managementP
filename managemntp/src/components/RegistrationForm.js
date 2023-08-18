@@ -7,6 +7,8 @@ const RegistrationForm = () => {
     password: '',
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleRegistration = async () => {
     try {
       const response = await fetch('http://localhost/php/register.php', {
@@ -36,13 +38,26 @@ const RegistrationForm = () => {
         />
         <br />
         <label>Password:</label>
-        <input
-          type="password"
-          value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-        />
+        <div className="password-input">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            value={formData.password}
+            onChange={(e) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
+          />
+          <button
+            type="button"
+            className="password-toggle-button"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? 'Hide' : 'Show'} Password
+          </button>
+        </div>
         <br />
-        <button type="button" onClick={handleRegistration}>Register</button>
+        <button type="button" onClick={handleRegistration}>
+          Register
+        </button>
       </form>
     </div>
   );

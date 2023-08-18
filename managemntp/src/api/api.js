@@ -16,8 +16,23 @@ const api = {
       throw new Error(error.message);
     }
   },
+  loginUser: async (userData) => {
+    try {
+      const response = await axios.post(`${BASE_URL}/login.php`, userData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-  // Add more API functions as needed
+      return response.data;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  },
+  // Add more APIs here
+  
 };
+
+
 
 export default api;
