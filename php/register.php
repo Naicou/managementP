@@ -31,6 +31,16 @@ if ($email === '' || $password === '') {
     echo json_encode($response);
     exit();
 }
+// Check if email already exists in the database
+$checkQuery = "SELECT * FROM users WHERE email = '$email'";
+$checkResult = mysqli_query($conn, $checkQuery);
+
+if (mysqli_num_rows($checkResult) > 0) {
+    $response = array('error' => 'Email already exists');
+    echo json_encode($response);
+    exit();
+}
+
 // Insert user into the database
 $query = "INSERT INTO users (user_id, email, password) VALUES ('$user_id', '$email', '$password')";
 
